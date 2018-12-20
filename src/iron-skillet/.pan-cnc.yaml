@@ -32,6 +32,9 @@ views:
   - name: ironskilletprovision
     class: IronSkilletProvisionView
 
+  - name: provision
+    class: ProvisionSnippetView
+
 
 
 
