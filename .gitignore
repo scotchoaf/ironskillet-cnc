@@ -105,8 +105,3 @@ venv.bak/
 
 #rubymine
 .idea/
-
-#pan-cnc
-pan-cnc/
-pan_cnc/
-cnc/
