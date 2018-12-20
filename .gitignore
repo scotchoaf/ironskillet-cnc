@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+#rubymine
+.idea/
+
+#pan-cnc
+pan-cnc/
+pan_cnc/
+cnc/
