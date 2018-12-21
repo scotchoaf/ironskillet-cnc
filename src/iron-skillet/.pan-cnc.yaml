@@ -16,7 +16,7 @@ views:
   - name: ironskilletconfig
     class: ChooseSnippetByLabelView
     menu: Iron Skillet
-    menu_option: Iron Skillet Configuration
+    menu_option: Iron Skillet API Configuration
     attributes:
       label_name: service_type
       label_value: iron_skillet
@@ -34,6 +34,16 @@ views:
 
   - name: provision
     class: ProvisionSnippetView
+
+  - name: setconfig
+    class: ChooseSnippetByLabelView
+    menu: Iron Skillet
+    menu_option: SET command option for device configuration
+    attributes:
+      label_name: service_type
+      label_value: iron_skillet_set
+      header: Select Device Type
+      title: Select Configuration Option
 
 
 
