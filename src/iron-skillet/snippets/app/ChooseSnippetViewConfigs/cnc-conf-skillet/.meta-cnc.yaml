@@ -1,0 +1,59 @@
+name: cnc-conf-skillet
+label: Iron Skillet Step 1
+description: Iron Skillet configuration
+type: panorama
+
+labels:
+  customize_field: snippet_name
+  customize_label_name: service_type
+  customize_label_value: iron_skillet
+
+extends:
+variables:
+  - name: snippet_name
+    description: Iron-SKillet configuration type
+    default: v8.1 Iron-Skillet for NGFW
+    type_hint: text
+  - name: DG_STACK_USE_FW_NAME
+    description: For Panorama - use firewall name for device-group and stack names
+    default: True
+    type_hint: dropdown
+    dd_list:
+      - key: yes
+        value: True
+      - key: no
+        value: False
+  - name: INCLUDE_PAN_EDL
+    description: include the predefined Palo Alto Networks external lists
+    default: True
+    type_hint: dropdown
+    dd_list:
+      - key: yes
+        value: True
+      - key: no
+        value: False
+  - name: HIDE_BASIC
+    description: hide basics like dns, ntp, and sinkhole addresses
+    default: True
+    type_hint: dropdown
+    dd_list:
+      - key: yes
+        value: True
+      - key: no
+        value: False
+  - name: HIDE_EMAIL_SYSLOG
+    description: hide email and syslog stuff
+    default: True
+    type_hint: dropdown
+    dd_list:
+      - key: yes
+        value: True
+      - key: no
+        value: False
+
+
+
+
+
+snippets:
+

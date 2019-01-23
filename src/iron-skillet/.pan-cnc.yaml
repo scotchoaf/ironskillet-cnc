@@ -1,7 +1,22 @@
 name: skillet
 
+# repos and templates pulled in for this application
+# pulls in version 8.1 and 8.0 by default
+# comment modify comments and branch names as required
+repositories:
+  - name: Iron-Skillet-v81
+    url: https://github.com/PaloAltoNetworks/iron-skillet.git
+    branch: panos_v8.1
+    destination_directory: iron-skillet-81
+    repositories:
+  - name: Iron-Skillet-v80
+    url: https://github.com/PaloAltoNetworks/iron-skillet.git
+    branch: panos_v8.0
+    destination_directory: iron-skillet-80
+
 views:
 
+# main menu and welcome with link to docs
   - name: ''
     class: CNCView
     menu: Iron Skillet
@@ -13,27 +28,43 @@ views:
       description: Iron-Skillet Configurations
       documentation_link: http://iron-skillet_panorama_dg.readthedocs.io
 
+# primary iron-skillet selection menu
   - name: ironskilletconfig
-    class: ChooseSnippetByLabelView
+    class: ChooseSnippetView
     menu: Iron Skillet
-    menu_option: Iron Skillet Configuration
+    menu_option: Iron Skillet API Configuration
     attributes:
-      label_name: service_type
-      label_value: iron_skillet
+      snippet: cnc-conf-skillet
       header: Step 1
       title: Select Configuration Option
       next_url: workflow01
 
+# second stage set of fields to determine final field choices
+# views.py has the modified python class
   - name: workflow01
     class: IronSkilletWorkflow01
     attributes:
       next_url: ironskilletprovision
 
+# final push to configure using the Panorama or PAN-OS API
+# views.py has the modified python class
   - name: ironskilletprovision
     class: IronSkilletProvisionView
 
   - name: provision
     class: ProvisionSnippetView
+
+# generation of set command text file
+  - name: setconfig
+    class: ChooseSnippetByLabelView
+    menu: Iron Skillet
+    menu_option: SET command option for device configuration
+    attributes:
+      label_name: service_type
+      label_value: iron_skillet_set
+      header: Select Device Type
+      title: Select Configuration Option
+
 
 
 
