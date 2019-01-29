@@ -47,7 +47,7 @@ Add and prep the pan-cnc submodule then start the server
     cd cnc
     pip install -r requirements.txt
     ./manage.py migrate
-    ./manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('vistoq', 'admin@example.com', 'vistoq')"
+    ./manage.py shell -c "from django.contrib.auth.models import User; User.objects.create_superuser('skillet', 'admin@example.com', 'skillet')"
     export PANORAMA_IP=192.168.55.6
     export PANORAMA_USERNAME=admin
     export PANORAMA_PASSWORD=admin
