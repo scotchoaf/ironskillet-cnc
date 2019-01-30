@@ -9,10 +9,10 @@ repositories:
     branch: panos_v8.1
     destination_directory: iron-skillet-81
     repositories:
-#  - name: Iron-Skillet-v80
-#    url: https://github.com/PaloAltoNetworks/iron-skillet.git
-#    branch: panos_v8.0
-#    destination_directory: iron-skillet-80
+  - name: Iron-Skillet-v80
+    url: https://github.com/PaloAltoNetworks/iron-skillet.git
+    branch: panos_v8.0
+    destination_directory: iron-skillet-80
 
 views:
 
